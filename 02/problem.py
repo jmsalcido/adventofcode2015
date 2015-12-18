@@ -1,3 +1,7 @@
+def do():
+    problem()
+    problem2()
+
 def get_input_list():
     input_value = open('input', 'r')
     lines = []

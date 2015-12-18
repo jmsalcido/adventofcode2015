@@ -1,8 +1,11 @@
 import hashlib
 
 code = "bgvyzdsv"
+def do():
+    problem()
+    problem2()
 
-def do1():
+def problem():
     i = 0
     while True:
         m = hashlib.md5()
@@ -13,7 +16,7 @@ def do1():
         i+=1
     print(i)
 
-def do2():
+def problem2():
     i = 0
     while True:
         m = hashlib.md5()

@@ -1,3 +1,7 @@
+def do():
+    problem()
+    problem2()
+
 def problem():
     input_file = readFile()
     value = input_file.read()
