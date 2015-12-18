@@ -1,3 +1,7 @@
+# debug lines h3h3
+# import pdb; pdb.set_trace()
+
+
 def do():
     # problem_second(get_input())
     test = [
@@ -48,14 +52,12 @@ def problem_second(iterable):
         line = line.replace("\n", "")
         word_dict = {}
         len_line = len(line)
-        for x in range(0,len_line):
-            if (x+1) > len_line:
+        for x in range(0, len_line):
+            if (x + 1) > len_line:
                 break
-            import pdb; pdb.set_trace()
             # issue on asdwwwwwords
-            if (x+2) < len_line and line[x] == line[x+1] and line[x] == line[x+2]:
-                continue
-            key = line[x:x+2]
+
+            key = line[x:x + 2]
             if len(key) != 2:
                 break
             if key in word_dict:
@@ -66,8 +68,7 @@ def problem_second(iterable):
         char_between_repeated = False
         repeated_pair_str = ""
         for x in range(0, len_line):
-            # import pdb; pdb.set_trace()
-            word = line[x:x+2]
+            word = line[x:x + 2]
             if repeated_pair and char_between_repeated:
                 break
             if not repeated_pair and len(word) == 2:
@@ -76,10 +77,10 @@ def problem_second(iterable):
                     repeated_pair_str = word
             if not char_between_repeated:
                 char_between_repeated = checkCharBetweenPair(line[x - 1:x + 2])
-        import pdb; pdb.set_trace()
         if repeated_pair and char_between_repeated:
             nice_set.add(line)
-        nice_dict[line] = {"word":repeated_pair_str, "char_between_repeated": char_between_repeated, "repeated_pair": repeated_pair}
+        nice_dict[line] = {"word": repeated_pair_str,
+                           "char_between_repeated": char_between_repeated, "repeated_pair": repeated_pair}
     print(len(nice_set))
     return nice_dict
 
