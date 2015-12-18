@@ -3,15 +3,16 @@
 
 
 def do():
-    # problem_second(get_input())
-    test = [
-        # "qjhvhtzxzqqjkmpb",
-        # "xxyxx",
-        # "uurcxstgmygtbstg",
-        # "ieodomkazucvgmuy",
-        "rxexcbwhiywwwwnu"
-    ]
-    problem_second(test)
+    problem_second(get_input())
+    # test = [
+    #     "qjhvhtzxzqqjkmpb",
+    #     "xxyxx",
+    #     "uurcxstgmygtbstg",
+    #     "ieodomkazucvgmuy",
+    #     "aaangdddf",
+    #     "rxexcbwhiywwwwnu"
+    # ]
+    # problem_second(test)
 
 
 def problem_first(iterable):
@@ -45,21 +46,27 @@ def problem_first(iterable):
 
 def problem_second(iterable):
     nice_strings = 0
-    # check case "aaa" or "bbb" or "ccc" or "xxx"
     nice_dict = {}
     nice_set = set()
     for line in iterable:
         line = line.replace("\n", "")
         word_dict = {}
         len_line = len(line)
+        char = ""
+        char_counts = 0
         for x in range(0, len_line):
             if (x + 1) > len_line:
                 break
-            # issue on asdwwwwwords
-
+            if char == line[x]:
+                char_counts += 1
+            else:
+                char_counts = 1
+            char = line[x]
             key = line[x:x + 2]
             if len(key) != 2:
                 break
+            if char_counts > 1 and (char_counts % 2) == 0 and key in word_dict and key[0] == key[1]:
+                continue
             if key in word_dict:
                 word_dict[key] += 1
             else:
