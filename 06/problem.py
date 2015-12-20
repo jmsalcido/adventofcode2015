@@ -56,10 +56,10 @@ def problem1():
             toggleUniverse(universe, rectangle)
         else:
             turnOnOff(universe, command == "turn on", rectangle)
-        for px in range(width):
-            for py in range(height):
-                if universe[px][py]:
-                    lights += 1
+    for px in range(width):
+        for py in range(height):
+            if universe[px][py]:
+                lights += 1
     print(lights)
 
 
