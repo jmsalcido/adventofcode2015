@@ -79,7 +79,7 @@ def calculateRectangle(x, y, xb, yb):
 
     for px in range_x:
         for py in range_y:
-            rectangle.append((px,py))
+            rectangle.append((px, py))
     return rectangle
 
 
